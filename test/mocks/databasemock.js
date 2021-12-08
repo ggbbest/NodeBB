@@ -44,7 +44,7 @@ nconf.set('url_parsed', urlObject);
 nconf.set('base_url', `${urlObject.protocol}//${urlObject.host}`);
 nconf.set('secure', urlObject.protocol === 'https:');
 nconf.set('use_port', !!urlObject.port);
-nconf.set('port', urlObject.port || nconf.get('port') || (nconf.get('PORT_ENV_VAR') ? nconf.get(nconf.get('PORT_ENV_VAR')) : false) || 4567);
+nconf.set('port', urlObject.port || nconf.get('port') || (nconf.get('PORT_ENV_VAR') ? nconf.get(nconf.get('PORT_ENV_VAR')) : false) || 3004);
 
 // cookies don't provide isolation by port: http://stackoverflow.com/a/16328399/122353
 const domain = nconf.get('cookieDomain') || urlObject.hostname;

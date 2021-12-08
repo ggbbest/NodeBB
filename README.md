@@ -1,3 +1,49 @@
+docker run -p 3004:3004 803ee62dcfa1
+
+docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' festive_chaplygin
+172.17.0.3
+docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' clever_bartik
+172.17.0.2
+
+
+docker run --name postgres-container -d --restart unless-stopped \
+  -p 5432:5432 -e POSTGRES_PASSWORD=123456 \
+  -v ${PWD}/data:/var/lib/postgresql/data postgres:13.3
+
+docker logs postgres-container
+docker exec -it postgres-container bash
+psql -U postgres
+CREATE DATABASE nodebb;
+
+Docker image pull redis
+
+#docker run -d --name redis -p 6379:6379 --network redis-net redis 
+docker run --name redis -p 6379:6379 --network redis-net -d redis redis-server --appendonly yes
+access
+docker run -it --network redis-net --rm redis redis-cli -h redis  
+
+
+requirepass foobared
+
+cd /home/dev/www/NodeBB/redisvolum
+docker build -t redis .
+##########################################################################
+docker run --name redis --restart unless-stopped -d -p 6379:6379 redis
+docker run --name nodeBB --restart unless-stopped -d -p 3004:3004 803ee62dcfa1
+##########################################################################
+
+docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' nodeBB
+172.17.0.3
+docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' redis
+172.17.0.2
+
+<!-- # 볼륨 설정하기 
+docker run --name redis -p 6379:6379 --network redis-net -v /home/dev/www/NodeBB/redisvolum -d redis:latest redis-server /home/dev/www/NodeBB/redisvolum/redis.conf --appendonly yes
+
+docker run --name redis -p 6379:6379 -v /home/dev/www/NodeBB/redisvolum/redis.conf:/usr/local/etc/redis/redis.conf -d redis:latest redis-server /usr/local/etc/redis/redis.conf --appendonly yes -->
+
+
+
 # ![NodeBB](public/images/logo.svg)
 
 [![Workflow](https://github.com/NodeBB/NodeBB/actions/workflows/test.yaml/badge.svg)](https://github.com/NodeBB/NodeBB/actions/workflows/test.yaml)

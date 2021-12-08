@@ -43,9 +43,9 @@
 				<div class="row input-row">
 					<div class="col-sm-7 col-xs-12 input-field">
 						<label for="install:url">Web Address (URL)</label>
-						<input id="install:url" type="text" class="form-control" name="url" value="<!-- IF url -->{url}<!-- ENDIF url -->" placeholder="http://localhost:4567" />
+						<input id="install:url" type="text" class="form-control" name="url" value="<!-- IF url -->{url}<!-- ENDIF url -->" placeholder="http://localhost:3004" />
 					</div>
-					<div class="col-sm-5 help-text" data-help="This is the address that resolves to your NodeBB forum. If no port is specified, <code>4567</code> will be used."></div>
+					<div class="col-sm-5 help-text" data-help="This is the address that resolves to your NodeBB forum. If no port is specified, <code>3004</code> will be used."></div>
 				</div>
 			</div>
 			<!-- END -->

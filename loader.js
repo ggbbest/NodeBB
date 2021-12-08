@@ -151,7 +151,7 @@ function getPorts() {
 		process.exit();
 	}
 	const urlObject = url.parse(_url);
-	let port = nconf.get('PORT') || nconf.get('port') || urlObject.port || 4567;
+	let port = nconf.get('PORT') || nconf.get('port') || urlObject.port || 3004;
 	if (!Array.isArray(port)) {
 		port = [port];
 	}

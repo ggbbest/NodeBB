@@ -64,7 +64,7 @@ let launchUrl;
 const viewsDir = path.join(paths.baseDir, 'build/public/templates');
 
 web.install = async function (port) {
-	port = port || 4567;
+	port = port || 3004;
 	winston.info(`Launching web installer on port ${port}`);
 
 	app.use(express.static('public', {}));

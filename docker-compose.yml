@@ -7,7 +7,7 @@ services:
     depends_on:
       - db
     expose:
-      - 4567 # use a reverse proxy like Traefik
+      - 3004 # use a reverse proxy like Traefik
 
   db:
     image: mongo:bionic

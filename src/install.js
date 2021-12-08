@@ -18,7 +18,7 @@ questions.main = [
 		name: 'url',
 		description: 'URL used to access this NodeBB',
 		default:
-			nconf.get('url') || 'http://localhost:4567',
+			nconf.get('url') || 'http://localhost:3004',
 		pattern: /^http(?:s)?:\/\//,
 		message: 'Base URL must begin with \'http://\' or \'https://\'',
 	},
@@ -42,7 +42,7 @@ questions.main = [
 questions.optional = [
 	{
 		name: 'port',
-		default: nconf.get('port') || 4567,
+		default: nconf.get('port') || 3004,
 	},
 ];
 

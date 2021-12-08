@@ -94,7 +94,7 @@ jobs:
         env:
           SETUP: >-
             {
-              "url": "http://127.0.0.1:4567",
+              "url": "http://127.0.0.1:3004",
               "secret": "abcdef",
               "admin:username": "admin",
               "admin:email": "test@example.org",
@@ -122,7 +122,7 @@ jobs:
         env:
           SETUP: >-
             {
-              "url": "http://127.0.0.1:4567",
+              "url": "http://127.0.0.1:3004",
               "secret": "abcdef",
               "admin:username": "admin",
               "admin:email": "test@example.org",
@@ -153,7 +153,7 @@ jobs:
         env:
           SETUP: >-
             {
-              "url": "http://127.0.0.1:4567/forum",
+              "url": "http://127.0.0.1:3004/forum",
               "secret": "abcdef",
               "admin:username": "admin",
               "admin:email": "test@example.org",
